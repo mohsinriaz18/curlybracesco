@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start Your Project — Curly Braces LLC</title>
+  <meta name="description" content="Ready to build your MVP or web app? Fill out our project intake form and we'll get back to you within 24 hours. Free discovery week included.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://curlybraces.co/contact">
+  <link rel="icon" href="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f4f4f4;
+      color: #0e0e0e;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(244,244,244,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo img { height: 32px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #5c5c5c;
+      text-decoration: none;
+      padding: 6px 14px;
+      border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: #0e0e0e; background: rgba(0,0,0,0.05); }
+    .nav-cta {
+      background: #0e0e0e;
+      color: #fff !important;
+      border-radius: 10px;
+      padding: 8px 18px !important;
+    }
+    .nav-cta:hover { background: #225cff !important; color: #fff !important; }
+
+    /* HERO */
+    .hero {
+      padding: 80px 32px 60px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid rgba(34,92,255,0.2);
+      color: #225cff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      letter-spacing: 0.02em;
+    }
+    .hero-badge span { width: 7px; height: 7px; border-radius: 50%; background: #225cff; display: inline-block; }
+    h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: #0e0e0e;
+      margin-bottom: 16px;
+    }
+    h1 em { font-style: normal; color: #225cff; }
+    .hero p {
+      font-size: 17px;
+      color: #5c5c5c;
+      line-height: 1.6;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* FORM WRAPPER */
+    .form-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    /* SIDEBAR */
+    .sidebar { position: sticky; top: 88px; }
+    .sidebar h3 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      color: #0e0e0e;
+    }
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .info-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+    .info-text h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+    .info-text p { font-size: 13px; color: #5c5c5c; line-height: 1.5; }
+    .info-text a { color: #225cff; text-decoration: none; }
+    .info-text a:hover { text-decoration: underline; }
+
+    .trust-badges {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .trust-badges p { font-size: 12px; color: #9a9a9a; font-weight: 500; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .trust-stat { font-size: 22px; font-weight: 800; color: #0e0e0e; margin-bottom: 2px; }
+    .trust-stat + p { font-size: 12px; color: #5c5c5c; margin-bottom: 14px; }
+
+    /* FORM CARD */
+    .form-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 36px;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+    }
+    .form-card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+    }
+    .form-card > p {
+      font-size: 14px;
+      color: #5c5c5c;
+      margin-bottom: 28px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+    .form-group label { font-size: 13px; font-weight: 600; color: #2d2d5c; }
+    .form-group .required { color: #225cff; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 14px;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 14px;
+      color: #0e0e0e;
+      background: #fafafa;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #225cff;
+      box-shadow: 0 0 0 3px rgba(34,92,255,0.08);
+      background: #fff;
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235c5c5c' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+    .checkbox-group { display: flex; flex-direction: column; gap: 10px; }
+    .checkbox-item { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+    .checkbox-item input[type="checkbox"] {
+      width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid rgba(0,0,0,0.15);
+      cursor: pointer; accent-color: #225cff;
+    }
+    .checkbox-item span { font-size: 14px; color: #2d2d2d; }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: #225cff;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .submit-btn:hover { background: #1a4fd8; }
+    .submit-btn:active { transform: scale(0.99); }
+    .submit-btn .arrow { transition: transform 0.2s; }
+    .submit-btn:hover .arrow { transform: translateX(4px); }
+
+    .form-footer {
+      text-align: center;
+      font-size: 12px;
+      color: #9a9a9a;
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* SUCCESS STATE */
+    .success-state {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #e8f0ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+    }
+    .success-state h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .success-state p { color: #5c5c5c; font-size: 15px; line-height: 1.6; }
+
+    /* FOOTER */
+    footer {
+      background: #0e0e0e;
+      color: rgba(255,255,255,0.5);
+      padding: 32px;
+      text-align: center;
+      font-size: 13px;
+    }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: #fff; }
+    footer .footer-inner { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer .copy { order: 2; }
+    footer .footer-links { display: flex; gap: 4px; flex-wrap: wrap; justify-content: center; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px 40px; }
+      .form-section { grid-template-columns: 1fr; padding: 0 20px 60px; gap: 32px; }
+      .sidebar { position: static; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 24px 20px; }
+      footer .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png" alt="Curly Braces LLC">
+    </a>
+    <div class="nav-links">
+      <a href="/projects.html">Projects</a>
+      <a href="/services.html">Services</a>
+      <a href="/#how-it-works">Process</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/contact.html" class="nav-cta">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge"><span></span> Booking Open — 2 Spots Left</div>
+    <h1>Let's Build<br><em>Something Great</em></h1>
+    <p>Tell us about your project and we'll respond within 24 hours with a plan to make it happen. Free discovery week included.</p>
+  </section>
+
+  <!-- FORM SECTION -->
+  <section class="form-section">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <h3>What happens next?</h3>
+
+      <div class="info-item">
+        <div class="info-icon">📋</div>
+        <div class="info-text">
+          <h4>We review your brief</h4>
+          <p>Our team reads every submission and matches you with the right specialists within 24 hours.</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <h4>Free discovery call</h4>
+          <p>A 30-min call to align on goals, scope, and what success looks like for your project.</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">🚀</div>
+        <div class="info-text">
+          <h4>We start building</h4>
+          <p>Your free discovery week kicks off immediately after alignment. No upfront payment needed.</p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">✉️</div>
+        <div class="info-text">
+          <h4>Reach us directly</h4>
+          <p><a href="mailto:business@curlybraces.co">business@curlybraces.co</a></p>
+          <p style="margin-top:4px"><a href="tel:+17864299639">+1 (786) 429-9639</a></p>
+        </div>
+      </div>
+
+      <div class="trust-badges">
+        <p>Trusted by founders worldwide</p>
+        <div class="trust-stat">120+</div>
+        <p>Projects delivered</p>
+        <div class="trust-stat">100%</div>
+        <p>Client retention rate</p>
+        <div class="trust-stat">5.0 ★</div>
+        <p>Average rating on Clutch</p>
+      </div>
+    </aside>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <h2>Project Intake Form</h2>
+      <p>Fill in the details below and we'll get back to you within 24 hours.</p>
+
+      <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="John Smith" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="john@company.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">Company / Startup</label>
+            <input type="text" id="company" name="company" placeholder="Your company name" autocomplete="organization">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 555 000 0000" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">What do you need? <span class="required">*</span></label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option value="mvp">MVP Launch (idea → product in weeks)</option>
+            <option value="saas">SaaS Development</option>
+            <option value="vibe">Vibe Coding / AI-Assisted Build</option>
+            <option value="rescue">Dev Rescue (fix or take over existing project)</option>
+            <option value="uiux">UI/UX Design & Audit</option>
+            <option value="subscription">Monthly Product Builder Subscription</option>
+            <option value="discovery">Free Discovery Week (start here)</option>
+            <option value="other">Not sure — let's talk</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Estimated Budget</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Select a budget range…</option>
+            <option value="under1k">Under $1,000</option>
+            <option value="1k-3k">$1,000 – $3,000</option>
+            <option value="3k-5k">$3,000 – $5,000</option>
+            <option value="5k-10k">$5,000 – $10,000</option>
+            <option value="10k-25k">$10,000 – $25,000</option>
+            <option value="25k+">$25,000+</option>
+            <option value="unsure">Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="timeline">Desired Timeline</label>
+          <select id="timeline" name="timeline">
+            <option value="" disabled selected>When do you need this?</option>
+            <option value="asap">ASAP — start immediately</option>
+            <option value="2weeks">Within 2 weeks</option>
+            <option value="month">Within a month</option>
+            <option value="quarter">Within 3 months</option>
+            <option value="flexible">Flexible / no rush</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Tell us about your project <span class="required">*</span></label>
+          <textarea id="description" name="description" placeholder="Describe your idea, what problem it solves, who it's for, and any specific features you have in mind…" required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>How did you hear about us?</label>
+          <select id="source" name="source">
+            <option value="" disabled selected>Select one…</option>
+            <option value="google">Google Search</option>
+            <option value="clutch">Clutch.co</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="twitter">Twitter / X</option>
+            <option value="referral">Referral from a friend</option>
+            <option value="goodfirms">GoodFirms</option>
+            <option value="topdevelopers">TopDevelopers.co</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          Send My Brief
+          <span class="arrow">→</span>
+        </button>
+
+        <p class="form-footer">
+          We respond within 24 hours on business days.<br>
+          Your information is never shared with third parties.
+        </p>
+      </form>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-state" id="success-state">
+        <div class="success-icon">🎉</div>
+        <h3>You're in!</h3>
+        <p>Thanks for reaching out. We've received your brief and will get back to you within 24 hours to schedule your free discovery call.</p>
+        <p style="margin-top:16px">In the meantime, <a href="/projects.html" style="color:#225cff">check out our work</a> or <a href="/" style="color:#225cff">return home</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="nav-logo">
+        <img src="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png" alt="Curly Braces" style="height:24px;filter:brightness(0) invert(1);opacity:0.6">
+      </a>
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/services.html">Services</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <p class="copy">2026 © Curly Braces LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contact-form');
+      const btn = form.querySelector('.submit-btn');
+
+      // Basic validation
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const service = document.getElementById('service').value;
+      const description = document.getElementById('description').value.trim();
+
+      if (!name || !email || !service || !description) {
+        const firstEmpty = [
+          !name && document.getElementById('name'),
+          !email && document.getElementById('email'),
+          !service && document.getElementById('service'),
+          !description && document.getElementById('description'),
+        ].find(Boolean);
+        if (firstEmpty) firstEmpty.focus();
+        return;
+      }
+
+      // Simulate sending
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        form.style.display = 'none';
+        document.getElementById('success-state').style.display = 'block';
+      }, 800);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Projects — Curly Braces LLC | AI-Powered Development Portfolio</title>
+  <meta name="description" content="Explore Curly Braces LLC's portfolio of 120+ delivered projects — MVPs, SaaS platforms, mobile apps, and AI-powered products built for founders worldwide.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://curlybraces.co/projects">
+  <link rel="icon" href="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f4f4f4;
+      color: #0e0e0e;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(244,244,244,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0 40px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 32px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: #5c5c5c;
+      text-decoration: none; padding: 6px 14px; border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: #0e0e0e; background: rgba(0,0,0,0.05); }
+    .nav-links a.active { color: #0e0e0e; font-weight: 600; }
+    .nav-cta {
+      background: #0e0e0e; color: #fff !important;
+      border-radius: 10px; padding: 8px 18px !important;
+    }
+    .nav-cta:hover { background: #225cff !important; }
+
+    /* HERO */
+    .hero {
+      padding: 80px 40px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .hero-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+    .hero-left { max-width: 640px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; border: 1px solid rgba(34,92,255,0.2);
+      color: #225cff; font-size: 13px; font-weight: 600;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .hero-badge span { width: 7px; height: 7px; border-radius: 50%; background: #225cff; display: inline-block; }
+    h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800; letter-spacing: -0.04em; line-height: 1.02;
+      color: #0e0e0e; margin-bottom: 18px;
+    }
+    h1 em { font-style: normal; color: #225cff; }
+    .hero-desc { font-size: 17px; color: #5c5c5c; line-height: 1.6; max-width: 500px; }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-shrink: 0;
+    }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 36px; font-weight: 800; letter-spacing: -0.03em; color: #0e0e0e; line-height: 1; }
+    .stat-num em { font-style: normal; color: #225cff; }
+    .stat-label { font-size: 12px; color: #9a9a9a; font-weight: 500; margin-top: 4px; }
+
+    /* FILTERS */
+    .filters {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px 40px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 8px 18px;
+      border-radius: 100px;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      background: #fff;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: #5c5c5c;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: #225cff; color: #225cff; }
+    .filter-btn.active { background: #225cff; border-color: #225cff; color: #fff; }
+
+    /* PROJECTS GRID */
+    .projects-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px 80px;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+
+    /* FEATURED (spans 8 cols) */
+    .project-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.1);
+    }
+    .project-card.featured { grid-column: span 8; }
+    .project-card.standard { grid-column: span 4; }
+    .project-card.wide { grid-column: span 6; }
+
+    .card-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative;
+      background: #e8e8e8;
+    }
+    .card-image.tall { aspect-ratio: 4/3; }
+    .card-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .project-card:hover .card-image img { transform: scale(1.03); }
+    .card-image-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+      background: linear-gradient(135deg, #e8f0ff, #f0e8ff);
+    }
+
+    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .card-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+    .tag {
+      font-size: 11px; font-weight: 600;
+      padding: 4px 10px; border-radius: 100px;
+      background: rgba(34,92,255,0.08);
+      color: #225cff; letter-spacing: 0.03em; text-transform: uppercase;
+    }
+    .tag.orange { background: rgba(255,92,0,0.08); color: #ff5c00; }
+    .tag.dark { background: rgba(0,0,0,0.06); color: #5c5c5c; }
+    .card-body h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .project-card.standard .card-body h3 { font-size: 17px; }
+    .card-body p { font-size: 14px; color: #5c5c5c; line-height: 1.6; flex: 1; }
+    .card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 20px; padding-top: 16px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .card-result {
+      font-size: 12px; font-weight: 600; color: #5c5c5c;
+    }
+    .card-result strong { color: #0e0e0e; font-size: 15px; display: block; }
+    .card-link {
+      font-size: 13px; font-weight: 600; color: #225cff;
+      display: flex; align-items: center; gap: 4px;
+      transition: gap 0.2s;
+    }
+    .project-card:hover .card-link { gap: 8px; }
+
+    /* CTA SECTION */
+    .cta-section {
+      max-width: 1200px; margin: 0 auto; padding: 0 40px 100px;
+    }
+    .cta-card {
+      background: #0e0e0e;
+      border-radius: 24px;
+      padding: 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(34,92,255,0.3) 0%, transparent 60%);
+    }
+    .cta-card * { position: relative; }
+    .cta-card h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800; letter-spacing: -0.03em;
+      color: #fff; margin-bottom: 16px; line-height: 1.1;
+    }
+    .cta-card h2 em { font-style: normal; color: #659bff; }
+    .cta-card p { font-size: 17px; color: rgba(255,255,255,0.6); margin-bottom: 32px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 14px 28px; background: #225cff; color: #fff;
+      border-radius: 12px; text-decoration: none; font-weight: 700;
+      font-size: 15px; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: #1a4fd8; }
+    .btn-ghost {
+      padding: 14px 28px; background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px; text-decoration: none; font-weight: 600;
+      font-size: 15px; transition: all 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+    /* FOOTER */
+    footer {
+      background: #0e0e0e; color: rgba(255,255,255,0.5);
+      padding: 32px 40px; font-size: 13px;
+    }
+    footer .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 8px; transition: color 0.2s; }
+    footer a:hover { color: #fff; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .project-card.featured { grid-column: span 12; }
+      .project-card.standard { grid-column: span 6; }
+      .project-card.wide { grid-column: span 12; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .hero, .filters, .projects-grid, .cta-section { padding-left: 20px; padding-right: 20px; }
+      .hero-top { flex-direction: column; align-items: flex-start; }
+      .hero-stats { gap: 24px; }
+      .project-card.featured,
+      .project-card.standard,
+      .project-card.wide { grid-column: span 12; }
+      .cta-card { padding: 40px 24px; }
+      footer { padding: 24px 20px; }
+      footer .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png" alt="Curly Braces LLC">
+    </a>
+    <div class="nav-links">
+      <a href="/projects.html" class="active">Projects</a>
+      <a href="/services.html">Services</a>
+      <a href="/#how-it-works">Process</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/contact.html" class="nav-cta">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-top">
+      <div class="hero-left">
+        <div class="hero-badge"><span></span> 120+ Projects Delivered</div>
+        <h1>Built to<br><em>Ship Fast</em></h1>
+        <p class="hero-desc">From AI-powered MVPs to full SaaS platforms — every project is built with speed, precision, and a focus on real outcomes.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num"><em>120</em>+</div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><em>100</em>%</div>
+          <div class="stat-label">Retention Rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5<em>.0</em></div>
+          <div class="stat-label">Avg. Clutch Rating</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterProjects('all', this)">All Work</button>
+    <button class="filter-btn" onclick="filterProjects('mvp', this)">MVP Launch</button>
+    <button class="filter-btn" onclick="filterProjects('saas', this)">SaaS</button>
+    <button class="filter-btn" onclick="filterProjects('ai', this)">AI-Powered</button>
+    <button class="filter-btn" onclick="filterProjects('mobile', this)">Mobile</button>
+    <button class="filter-btn" onclick="filterProjects('design', this)">Design</button>
+  </div>
+
+  <!-- PROJECTS GRID -->
+  <div class="projects-grid" id="projects-grid">
+
+    <!-- COPILOT TRAVEL — Featured -->
+    <a href="/contact.html" class="project-card featured" data-tags="mvp,ai,mobile">
+      <div class="card-image">
+        <img src="https://framerusercontent.com/images/gN5CYNfzBfdHqa94VFYXBt53nvU.jpg"
+             alt="Copilot Travel — AI-powered travel companion app by Curly Braces"
+             loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag">AI-Powered</span>
+          <span class="tag orange">MVP Launch</span>
+          <span class="tag dark">Mobile App</span>
+        </div>
+        <h3>Copilot Travel</h3>
+        <p>An AI-powered travel companion that generates personalized itineraries, recommends local experiences, and handles real-time trip adjustments — built from idea to launch in under 6 weeks.</p>
+        <div class="card-footer">
+          <div class="card-result">
+            <strong>6 weeks</strong>
+            idea to production launch
+          </div>
+          <span class="card-link">View Details →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- BOTAGNENT.IO — Standard -->
+    <a href="/contact.html" class="project-card standard" data-tags="ai,saas">
+      <div class="card-image tall">
+        <img src="https://framerusercontent.com/images/kLEarM4CqqEw7s6lsiNyHMkNJeo.png"
+             alt="BotAgent.io — AI agent automation platform"
+             loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag">AI Agents</span>
+          <span class="tag dark">SaaS</span>
+        </div>
+        <h3>BotAgent.io</h3>
+        <p>A no-code platform for building, deploying, and monitoring AI agents at scale. Integrates with 40+ APIs out of the box.</p>
+        <div class="card-footer">
+          <div class="card-result">
+            <strong>40+ integrations</strong>
+            at launch
+          </div>
+          <span class="card-link">View Details →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- RESUMEDIA — Standard -->
+    <a href="/contact.html" class="project-card standard" data-tags="ai,saas,mvp">
+      <div class="card-image tall">
+        <img src="https://framerusercontent.com/images/6siGhOavZNpKeA5FTPIsK7F6va0.jpg"
+             alt="Resumedia — AI-powered resume builder SaaS"
+             loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag orange">MVP Launch</span>
+          <span class="tag dark">SaaS</span>
+        </div>
+        <h3>Resumedia</h3>
+        <p>AI-powered resume builder that tailors CVs to specific job descriptions, improving interview callback rates for job seekers.</p>
+        <div class="card-footer">
+          <div class="card-result">
+            <strong>3× better</strong>
+            callback rate for users
+          </div>
+          <span class="card-link">View Details →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- XECUTORS — Wide -->
+    <a href="/contact.html" class="project-card wide" data-tags="saas,mvp">
+      <div class="card-image">
+        <img src="https://framerusercontent.com/images/DtVZ35uKacVMAPT4rinK328fGuA.png"
+             alt="Xecutors — execution management platform"
+             loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag">SaaS Platform</span>
+          <span class="tag orange">Full Stack</span>
+        </div>
+        <h3>Xecutors</h3>
+        <p>A project execution management platform connecting clients with vetted experts for complex, high-stakes deliverables. Features real-time collaboration, escrow payments, and milestone tracking.</p>
+        <div class="card-footer">
+          <div class="card-result">
+            <strong>End-to-end</strong>
+            design → deployment
+          </div>
+          <span class="card-link">View Details →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- PHOTOGRAPHY PORTFOLIO — Wide -->
+    <a href="/contact.html" class="project-card wide" data-tags="design,mvp">
+      <div class="card-image">
+        <img src="https://framerusercontent.com/images/f0SZrrdCknWVnno1CxTYOMaqPoc.png"
+             alt="Timeless Photography Portfolio — custom portfolio website"
+             loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="card-tags">
+          <span class="tag dark">Portfolio</span>
+          <span class="tag">UI/UX Design</span>
+        </div>
+        <h3>A Timeless Portfolio for a Visionary Photographer</h3>
+        <p>A bespoke, high-performance portfolio website for a professional photographer — featuring a full-bleed gallery, client booking system, and print shop integration.</p>
+        <div class="card-footer">
+          <div class="card-result">
+            <strong>2 weeks</strong>
+            design to live site
+          </div>
+          <span class="card-link">View Details →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-card">
+      <h2>Your project<br>could be <em>next</em></h2>
+      <p>Join 120+ founders who launched faster with Curly Braces</p>
+      <div class="cta-btns">
+        <a href="/contact.html" class="btn-primary">Start Your Project →</a>
+        <a href="/services.html" class="btn-ghost">See Our Services</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="/">
+        <img src="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png" alt="Curly Braces" style="height:24px;filter:brightness(0) invert(1);opacity:0.6">
+      </a>
+      <div>
+        <a href="/">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/services.html">Services</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <span>2026 © Curly Braces LLC. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    function filterProjects(tag, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      document.querySelectorAll('.project-card').forEach(card => {
+        if (tag === 'all') {
+          card.style.display = '';
+          card.style.opacity = '1';
+        } else {
+          const tags = card.dataset.tags || '';
+          const show = tags.includes(tag);
+          card.style.opacity = show ? '1' : '0.25';
+          card.style.pointerEvents = show ? '' : 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Our Services — Curly Braces LLC | AI-Powered Development Agency</title>
+  <meta name="description" content="MVP launch, SaaS development, vibe coding, dev rescue, and UI/UX design — explore how Curly Braces LLC builds products faster with AI-powered development.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://curlybraces.co/services">
+  <link rel="icon" href="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f4f4f4;
+      color: #0e0e0e;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(244,244,244,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding: 0 40px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo img { height: 32px; }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .nav-links a {
+      font-size: 14px; font-weight: 500; color: #5c5c5c;
+      text-decoration: none; padding: 6px 14px; border-radius: 8px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .nav-links a:hover { color: #0e0e0e; background: rgba(0,0,0,0.05); }
+    .nav-links a.active { color: #0e0e0e; font-weight: 600; }
+    .nav-cta { background: #0e0e0e; color: #fff !important; border-radius: 10px; padding: 8px 18px !important; }
+    .nav-cta:hover { background: #225cff !important; }
+
+    /* PAGE HEADER */
+    .page-header {
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 40px 0;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; border: 1px solid rgba(34,92,255,0.2);
+      color: #225cff; font-size: 13px; font-weight: 600;
+      padding: 6px 14px; border-radius: 100px; margin-bottom: 20px;
+    }
+    .hero-badge span { width: 7px; height: 7px; border-radius: 50%; background: #225cff; }
+    h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 800; letter-spacing: -0.04em; line-height: 1.02;
+      margin-bottom: 18px;
+    }
+    h1 em { font-style: normal; color: #225cff; }
+    .page-header > p {
+      font-size: 18px; color: #5c5c5c; line-height: 1.6;
+      max-width: 600px; margin-bottom: 60px;
+    }
+
+    /* SERVICES LIST */
+    .services-list {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 40px 80px;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+
+    .service-card {
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid rgba(0,0,0,0.06);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      transition: box-shadow 0.25s;
+    }
+    .service-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+    .service-card.reverse { direction: rtl; }
+    .service-card.reverse > * { direction: ltr; }
+
+    .service-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 340px;
+    }
+    .service-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .service-card:hover .service-image img { transform: scale(1.03); }
+
+    .service-body { padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+
+    .service-number {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #225cff; margin-bottom: 16px;
+    }
+    .service-body h2 {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .service-body > p {
+      font-size: 15px; color: #5c5c5c; line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    .features-list { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 10px; }
+    .features-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 14px; color: #2d2d2d; line-height: 1.5;
+    }
+    .features-list li::before {
+      content: '';
+      width: 18px; height: 18px; flex-shrink: 0;
+      border-radius: 50%;
+      background: rgba(34,92,255,0.1);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.5 2.5L9 1' stroke='%23225cff' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-top: 1px;
+    }
+
+    .service-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      background: #0e0e0e; color: #fff;
+      border-radius: 12px; text-decoration: none;
+      font-weight: 700; font-size: 14px;
+      transition: background 0.2s, gap 0.2s;
+      align-self: flex-start;
+    }
+    .service-cta:hover { background: #225cff; gap: 12px; }
+
+    /* TECH STACK STRIP */
+    .tech-section {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 40px 80px;
+    }
+    .tech-header { text-align: center; margin-bottom: 40px; }
+    .tech-header h2 { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .tech-header p { font-size: 15px; color: #5c5c5c; }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 12px;
+    }
+    .tech-item {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 14px;
+      padding: 20px 12px;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .tech-item:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .tech-item .tech-icon { font-size: 28px; margin-bottom: 8px; }
+    .tech-item span { font-size: 12px; font-weight: 600; color: #5c5c5c; }
+
+    /* PROCESS SECTION */
+    .process-section {
+      background: #0e0e0e; padding: 80px 40px;
+      position: relative; overflow: hidden;
+    }
+    .process-section::before {
+      content: '';
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, rgba(34,92,255,0.25) 0%, transparent 70%);
+    }
+    .process-inner {
+      max-width: 1200px; margin: 0 auto; position: relative;
+    }
+    .process-header { text-align: center; margin-bottom: 60px; }
+    .process-header h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800; letter-spacing: -0.03em;
+      color: #fff; margin-bottom: 12px;
+    }
+    .process-header p { font-size: 16px; color: rgba(255,255,255,0.5); }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 32px; left: 10%;right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(34,92,255,0.4), transparent);
+    }
+    .process-step { text-align: center; padding: 0 8px; }
+    .step-num {
+      width: 64px; height: 64px; border-radius: 50%;
+      background: rgba(34,92,255,0.15);
+      border: 1px solid rgba(34,92,255,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800;
+      color: #659bff; margin: 0 auto 16px;
+    }
+    .process-step h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .process-step p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+    /* CTA SECTION */
+    .cta-section {
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px 100px;
+    }
+    .cta-card {
+      background: linear-gradient(135deg, #225cff 0%, #1a4fd8 100%);
+      border-radius: 24px; padding: 64px; text-align: center;
+    }
+    .cta-card h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800; letter-spacing: -0.03em;
+      color: #fff; margin-bottom: 16px;
+    }
+    .cta-card p { font-size: 17px; color: rgba(255,255,255,0.8); margin-bottom: 32px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-white {
+      padding: 14px 28px; background: #fff; color: #225cff;
+      border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 15px;
+      transition: background 0.2s;
+    }
+    .btn-white:hover { background: #f0f5ff; }
+    .btn-ghost {
+      padding: 14px 28px; background: rgba(255,255,255,0.15);
+      color: #fff; border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 15px;
+      transition: background 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.25); }
+
+    /* FOOTER */
+    footer {
+      background: #0e0e0e; color: rgba(255,255,255,0.5);
+      padding: 32px 40px; font-size: 13px;
+    }
+    footer .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;
+    }
+    footer a { color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 8px; transition: color 0.2s; }
+    footer a:hover { color: #fff; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .service-card { grid-template-columns: 1fr; }
+      .service-card.reverse { direction: ltr; }
+      .service-image { min-height: 240px; }
+      .service-body { padding: 32px; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+      .process-steps::before { display: none; }
+    }
+    @media (max-width: 768px) {
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+      .page-header, .services-list, .tech-section, .cta-section { padding-left: 20px; padding-right: 20px; }
+      .process-section { padding: 60px 20px; }
+      .cta-card { padding: 40px 24px; }
+      .process-steps { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; }
+      footer .footer-inner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="/" class="nav-logo">
+      <img src="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png" alt="Curly Braces LLC">
+    </a>
+    <div class="nav-links">
+      <a href="/projects.html">Projects</a>
+      <a href="/services.html" class="active">Services</a>
+      <a href="/#how-it-works">Process</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/contact.html" class="nav-cta">Start a Project</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="hero-badge"><span></span> What We Do</div>
+    <h1>We Build Products<br><em>That Ship</em></h1>
+    <p>From rapid MVP validation to full-scale SaaS platforms — here's every way we help founders and teams move faster with AI-powered development.</p>
+  </header>
+
+  <!-- SERVICES -->
+  <div class="services-list">
+
+    <!-- 1. MVP LAUNCH -->
+    <div class="service-card" id="mvp">
+      <div class="service-image">
+        <img src="https://framerusercontent.com/images/ICpJ88FLyBkgossweky9Imveo.png"
+             alt="MVP Launch Support — validate and ship your product fast"
+             loading="lazy">
+      </div>
+      <div class="service-body">
+        <div class="service-number">01 — MVP Launch</div>
+        <h2>Ship Your MVP<br>in Weeks</h2>
+        <p>Smart and efficient MVP support that validates your idea quickly, highlights your core value, and sets a strong foundation for sustainable growth. No bloated scope, no wasted time.</p>
+        <ul class="features-list">
+          <li>Free 1-week product discovery before you commit</li>
+          <li>Clear scope, fixed timeline, transparent pricing</li>
+          <li>AI-assisted development for 3–5× faster builds</li>
+          <li>Design + frontend + backend + deployment, all handled</li>
+          <li>Post-launch support and iteration included</li>
+        </ul>
+        <a href="/contact.html" class="service-cta">Start Your MVP <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- 2. SAAS DEVELOPMENT -->
+    <div class="service-card reverse" id="saas">
+      <div class="service-image">
+        <img src="https://framerusercontent.com/images/IwIkiiygbvfFXwmzTDmZLmfaMaA.png"
+             alt="SaaS Development — build scalable software products"
+             loading="lazy">
+      </div>
+      <div class="service-body">
+        <div class="service-number">02 — SaaS Development</div>
+        <h2>Scalable SaaS<br>Products</h2>
+        <p>We architect and build production-ready SaaS products — from multi-tenant backends and billing systems to dashboards and admin panels. Built to scale from day one.</p>
+        <ul class="features-list">
+          <li>Multi-tenant architecture from the start</li>
+          <li>Stripe billing, subscription logic, and usage metering</li>
+          <li>Role-based access control and team management</li>
+          <li>Analytics dashboards and admin panels</li>
+          <li>API design, documentation, and third-party integrations</li>
+        </ul>
+        <a href="/contact.html" class="service-cta">Discuss Your SaaS <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- 3. VIBE CODING -->
+    <div class="service-card" id="vibe">
+      <div class="service-image">
+        <img src="https://framerusercontent.com/images/MTGWRSTccGzxjtPIPYZrrZzCkws.png"
+             alt="Vibe Coding — AI-assisted rapid development with Lovable, Bolt, Cursor"
+             loading="lazy">
+      </div>
+      <div class="service-body">
+        <div class="service-number">03 — Vibe Coding</div>
+        <h2>AI-Accelerated<br>Development</h2>
+        <p>We're Pakistan's premier vibe coding agency — using Lovable, Bolt, Cursor, and v0 to build production-quality products in a fraction of the traditional time. Same quality. Way less time.</p>
+        <ul class="features-list">
+          <li>Lovable, Bolt.new, Cursor AI, and v0 experts on staff</li>
+          <li>Full-stack builds — React, Next.js, Node, Supabase</li>
+          <li>AI-generated designs refined by senior developers</li>
+          <li>5× faster than traditional development cycles</li>
+          <li>Code ownership — no vendor lock-in, ever</li>
+        </ul>
+        <a href="/contact.html" class="service-cta">Build with AI <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- 4. DEV RESCUE -->
+    <div class="service-card reverse" id="rescue">
+      <div class="service-image">
+        <img src="https://framerusercontent.com/images/vxLsVF8k0HDu9CvOyFoFx1Dtw.jpg"
+             alt="Dev Rescue — take over and fix existing projects"
+             loading="lazy">
+      </div>
+      <div class="service-body">
+        <div class="service-number">04 — Dev Rescue</div>
+        <h2>Rescue Your<br>Stalled Project</h2>
+        <p>Stuck with a codebase that's going nowhere? We step in, audit your existing project, fix what's broken, and get you back on track fast — whether it's a bug-ridden app or an abandoned build.</p>
+        <ul class="features-list">
+          <li>Complete technical audit within 48 hours</li>
+          <li>Identify root causes, not just symptoms</li>
+          <li>Refactor, rebuild, or extend — your call</li>
+          <li>Performance optimisation and security hardening</li>
+          <li>Full documentation and handoff support</li>
+        </ul>
+        <a href="/contact.html" class="service-cta">Rescue My Project <span>→</span></a>
+      </div>
+    </div>
+
+    <!-- 5. UI/UX DESIGN -->
+    <div class="service-card" id="design">
+      <div class="service-image">
+        <img src="https://framerusercontent.com/images/GLh1pXxDRoJkdWqj8iH6bvCkSx4.png"
+             alt="UI/UX Design and Audits — beautiful, conversion-focused interfaces"
+             loading="lazy">
+      </div>
+      <div class="service-body">
+        <div class="service-number">05 — UI/UX Design & Audits</div>
+        <h2>Design That<br>Converts</h2>
+        <p>Beautiful interfaces aren't enough — they need to convert. We design and audit product UIs with a focus on user psychology, conversion, and developer handoff-ready Figma files.</p>
+        <ul class="features-list">
+          <li>Full-product UI/UX design in Figma</li>
+          <li>UX audit with actionable recommendations</li>
+          <li>Design systems, components, and style guides</li>
+          <li>User flow mapping and wireframing</li>
+          <li>Developer-ready handoff with all specs</li>
+        </ul>
+        <a href="/contact.html" class="service-cta">Get a Design Audit <span>→</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TECH STACK -->
+  <section class="tech-section">
+    <div class="tech-header">
+      <h2>Our Tech Stack</h2>
+      <p>The tools and technologies we use to build world-class products</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-item"><div class="tech-icon">⚛️</div><span>React</span></div>
+      <div class="tech-item"><div class="tech-icon">▲</div><span>Next.js</span></div>
+      <div class="tech-item"><div class="tech-icon">🟩</div><span>Node.js</span></div>
+      <div class="tech-item"><div class="tech-icon">🐘</div><span>PostgreSQL</span></div>
+      <div class="tech-item"><div class="tech-icon">⚡</div><span>Supabase</span></div>
+      <div class="tech-item"><div class="tech-icon">🔥</div><span>Firebase</span></div>
+      <div class="tech-item"><div class="tech-icon">🐍</div><span>Python</span></div>
+      <div class="tech-item"><div class="tech-icon">🤖</div><span>Lovable</span></div>
+      <div class="tech-item"><div class="tech-icon">⚡</div><span>Bolt.new</span></div>
+      <div class="tech-item"><div class="tech-icon">🎯</div><span>Cursor AI</span></div>
+      <div class="tech-item"><div class="tech-icon">🎨</div><span>Figma</span></div>
+      <div class="tech-item"><div class="tech-icon">☁️</div><span>Vercel</span></div>
+      <div class="tech-item"><div class="tech-icon">🐳</div><span>Docker</span></div>
+      <div class="tech-item"><div class="tech-icon">💳</div><span>Stripe</span></div>
+      <div class="tech-item"><div class="tech-icon">🔌</div><span>REST APIs</span></div>
+      <div class="tech-item"><div class="tech-icon">🔗</div><span>GraphQL</span></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section">
+    <div class="process-inner">
+      <div class="process-header">
+        <h2>How We Work</h2>
+        <p>A proven process that gets your product to market fast</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Discovery</h3>
+          <p>We learn about your business, goals, and requirements through in-depth consultation.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Strategy</h3>
+          <p>Together we define MVP scope, features, tech stack, timeline, and success metrics.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Build</h3>
+          <p>Using AI-driven tools, we rapidly build your product with regular demos and feedback.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Launch</h3>
+          <p>We deploy to production, ensuring everything works before your first users arrive.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">5</div>
+          <h3>Iterate</h3>
+          <p>Based on user feedback and data, we refine and enhance your product continuously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="cta-card">
+      <h2>Ready to Start Building?</h2>
+      <p>Tell us about your project and get a response within 24 hours</p>
+      <div class="cta-btns">
+        <a href="/contact.html" class="btn-white">Start Your Project →</a>
+        <a href="/projects.html" class="btn-ghost">See Our Work</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="/">
+        <img src="https://framerusercontent.com/images/37ktsBQI58yw77PASBqD64AVOk.png" alt="Curly Braces" style="height:24px;filter:brightness(0) invert(1);opacity:0.6">
+      </a>
+      <div>
+        <a href="/">Home</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/services.html">Services</a>
+        <a href="/#pricing">Pricing</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <span>2026 © Curly Braces LLC. All rights reserved.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
